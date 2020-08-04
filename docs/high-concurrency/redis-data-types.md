@@ -29,7 +29,7 @@ set college szu
 
 ```bash
 hset person name bingo
-hset person age 20
+hset person age  
 hset person id 1
 hget person name
 ```

@@ -1,4 +1,7 @@
+
+
 ## 面试题
+
 redis 的持久化有哪几种方式？不同的持久化机制都有什么优缺点？持久化机制具体底层是如何实现的？
 
 ## 面试官心理分析
@@ -16,6 +19,24 @@ redis 如果仅仅只是将数据缓存在内存里面，如果 redis 宕机了�
 很可能说，大量的请求过来，缓存全部无法命中，在 redis 里根本找不到数据，这个时候就死定了，出现**缓存雪崩**问题。所有请求没有在 redis 命中，就会去 mysql 数据库这种数据源头中去找，一下子 mysql 承接高并发，然后就挂了...
 
 如果你把 redis 持久化做好，备份和恢复方案做到企业级的程度，那么即使你的 redis 故障了，也可以通过备份数据，快速恢复，一旦恢复立即对外提供服务。
+
+bgrewriteaof
+
+### 23_05、redis replication的完整流运行程和原理的再次深入剖析？
+
+![1596348748774](C:\Users\zhouwei\AppData\Roaming\Typora\typora-user-images\1596348748774.png)
+
+![1596348835684](C:\Users\zhouwei\AppData\Roaming\Typora\typora-user-images\1596348835684.png)
+
+![1596348878348](C:\Users\zhouwei\AppData\Roaming\Typora\typora-user-images\1596348878348.png)
+
+![1596348912557](C:\Users\zhouwei\AppData\Roaming\Typora\typora-user-images\1596348912557.png)
+
+![1596348941378](C:\Users\zhouwei\AppData\Roaming\Typora\typora-user-images\1596348941378.png)
+
+
+
+### 23_06、redis主从架构下如何才能做到99.99%的高可用
 
 ### redis 持久化的两种方式
 - RDB：RDB 持久化机制，是对 redis 中的数据执行**周期性**的持久化。
